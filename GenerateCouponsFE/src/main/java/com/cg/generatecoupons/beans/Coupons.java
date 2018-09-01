@@ -3,57 +3,55 @@ package com.cg.generatecoupons.beans;
 import java.time.LocalDate;
 
 
+
+
 public class Coupons {
 
+	private int coupon_id;
 
-	
+	private String customer_email;
 
-	@Override
-	public String toString() {
-		return email.toString();
-	}
-
-	private int cid;
-
-	//@Column(name="customer_email")
-	private Customer email;
-
-	private LocalDate date;
+	private LocalDate validity;
 	
 	public Coupons() {
 		
 	}
 
-	public Coupons(int cid, Customer email, LocalDate date) {
+
+	@Override
+	public String toString() {
+		return "Coupons [coupon_id=" + coupon_id + ", customer_email=" + customer_email + ", date=" + validity + "]";
+	}
+
+
+	public Coupons(int coupon_id, String customer_email, LocalDate validity) {
 		super();
-		this.cid = cid;
-		this.email = email;
-		this.date = date;
+		this.coupon_id = coupon_id;
+		this.customer_email = customer_email;
+		this.validity = validity;
 	}
 
-	public int getCid() {
-		return cid;
+	public int getcoupon_id() {
+		return coupon_id;
 	}
 
-	public void setCid(int cid) {
-		this.cid = cid;
+	public void setcoupon_id(int coupon_id) {
+		this.coupon_id = coupon_id;
 	}
 
-	public Customer getEmail() {
-		return email;
+	public String getEmail() {
+		return customer_email;
 	}
 
-	public void setEmail(Customer email) {
-		this.email = email;
+	public void setEmail(String email) {
+		this.customer_email = email;
 	}
 
 	public LocalDate getDate() {
-		return date;
+		return validity;
 	}
 
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public void setDate(LocalDate validity) {
+		this.validity = validity;
 	}
-	
-	
 }

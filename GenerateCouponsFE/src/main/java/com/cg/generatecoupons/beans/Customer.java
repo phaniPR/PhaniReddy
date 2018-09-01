@@ -1,7 +1,7 @@
 package com.cg.generatecoupons.beans;
 
 public class Customer {
-
+	
 	private String cusmail;
 
 	private int count;
@@ -29,5 +29,4 @@ public class Customer {
 	public String toString() {
 		return cusmail;
 	}
-	
 }

@@ -90,7 +90,7 @@ body {
 
 <tr><th>Coupon Id</th><th>User Id</th><th>Expiry date</th></tr>
 <c:forEach items="${obj}" var="customer">
-<tr><td>${customer.cid}</td><td>${customer.email}</td><td>${customer.date}</td></tr> 
+<tr><td>${customer.coupon_id}</td><td>${customer.email}</td><td>${customer.date}</td></tr> 
 </c:forEach>
 
 </table>

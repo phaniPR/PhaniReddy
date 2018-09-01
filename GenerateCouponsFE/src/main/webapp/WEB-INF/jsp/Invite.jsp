@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
+<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>  --%>
+     <%-- <%@include file="footer.jsp"%>  --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,16 +14,33 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
+	background-color : #ABB2B9;
+	/* background-image: linear-gradient(#273746,#A6ACAF); */
+	height:100%;
 }
 
 /* Header/logo Title */
 .header {
 	padding: 40px;
 	text-align: center;
-	background: #616D7E;
+	background: #FFA07A;
+  background-image: linear-gradient(#FFA07A,#444); 
 	color: white;
+	height:220px;
 } 
 
+.knockout {
+  background: url(http://apod.nasa.gov/apod/image/0603/coma_misti.jpg) -80px -80px;
+  color: red;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-weight: bold;
+  font-size: 100px;         /* 100 */
+  font-family: arial, helvetica;
+  width: 500px;
+  margin: 50px auto;
+  text-align: center;
+}
 
 /* Increase the font size of the heading */
 .header h1 {
@@ -68,39 +85,45 @@ body {
 		width: 100%;
 	}
 	
+h6 {
+ font-family: "Comic Sans MS", cursive, sans-serif;
+}
 
-body{
-  background: #444;
+h3 {
+   
+   font-family: "Comic Sans MS", cursive, sans-serif;
+}
+h2 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 }
 </style>
 </head>
 
-<body>
 
 	<div class="header">
 		<div class="col-sm-1">	
 		</div>
-
-
-		<h1>CapStore</h1>
-	</div>
-
+     <div class="knockout">CapStore</a></div>
+	
+		</div>
+  
 	<div class="navbar"></div>
 
 
-	<title>Insert title here</title>
+	<title>CAPSTORE Coupon Page</title>
 </head>
-<body bgcolor=#BCC6CC>
+
+<body>
 
 	<center>
 		<h2>
-			<font color="#6600cc">CAPSTORE Coupon Page</font>
+			 <h2> CAPSTORE Coupon Page </h2> 
 		</h2><br><br>
 	</center>
 	<form>
 		<center>
-			<font color="#000080">Please Enter the customer mailId:</font>
+			 Please Enter the customer mailId:  
 			<input type="text" id="txt1" required></input><br>
 		</center><br>
 		<center><input type="button" id="btn" value="Generate Coupon" onclick="location.href='/invite/'+document.getElementById('txt1').value">
@@ -109,11 +132,11 @@ body{
 		<br>
 
 			<b><center>
-					Customer Id: ${obj.email}<br>
+				<h3>	 Customer Id: ${obj.email}   </h3> <br>
 				</center></b><br> <b><center>
-					Coupon code: ${obj.cid}<br>
+				<h3>	 Coupon code: ${obj.coupon_id}  </h3>  <br>
 				</center></b><br><b><center>
-				  Expiry date: ${obj.date}</center></b><br>
+				<h3>  Expiry date: ${obj.date}   </h3> </center></b><br>
 				  <br>
 		<center><input type="button" id="btn2" value="Send Coupon" onclick="location.href='/Success'"></center> 
 		<br></form>

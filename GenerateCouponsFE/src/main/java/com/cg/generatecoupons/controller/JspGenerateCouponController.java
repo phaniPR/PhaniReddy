@@ -13,12 +13,14 @@ import com.cg.generatecoupons.beans.Coupons;
 @Controller
 public class JspGenerateCouponController {
 
-	@RequestMapping("/invite/{id}")
-	public ModelAndView getCustomer(@PathVariable int id) {
+	@RequestMapping("/invite/{customer_email}")
+	public ModelAndView getCustomer(@PathVariable String customer_email) {
 		RestTemplate rt = new RestTemplate();
-		Coupons p = rt.getForObject("http://localhost:5445/getcoupon?id=" + id, Coupons.class);
+		/*Coupons p = rt.getForObject("http://localhost:5445/getcoupon?customer_email=" + customer_email, Coupons.class);*/
+		Coupons p=rt.getForObject("http://localhost:5445/getcoupon?email=" +customer_email, Coupons.class);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("obj", p);
+		System.out.println(p);
 		mv.setViewName("Invite");
 		return mv;
 	}

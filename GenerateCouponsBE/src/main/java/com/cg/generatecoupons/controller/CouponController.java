@@ -1,7 +1,6 @@
 package com.cg.generatecoupons.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +17,8 @@ public class CouponController {
 	private ICouponService service;
 	
 	@RequestMapping("/getcoupon")
-	public Optional<Coupons> getCoupon(@RequestParam int id) {
-	return 	service.getCoupon(id);
+	public Coupons getCoupon(@RequestParam String email) {
+	return 	service.getCoupon(email);
 	}
 	
 	@RequestMapping("/showall")
